@@ -1,0 +1,17 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303030;
+  width: 100%;
+  min-height: 100%;
+
+  .user-input {
+    margin: 10px;
+    color: #ffffff;
+  }
+
+  .results-table {
+    width: 80%;
+  }
+}

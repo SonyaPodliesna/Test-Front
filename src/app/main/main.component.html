@@ -1,0 +1,27 @@
+<div class="content">
+  <form class="user-input" [formGroup]="form">
+
+    <mat-form-field class="user-form" appearance="outline" color="primary">
+      <mat-label>Enter the letters</mat-label>
+      <input matInput formControlName="search" (keydown.enter)="search()">
+    </mat-form-field>
+
+  </form>
+
+  <table mat-table [dataSource]="dataSource" class="results-table">
+
+    <ng-container matColumnDef="result-column">
+      <th mat-header-cell *matHeaderCellDef> Results </th>
+      <td mat-cell *matCellDef="let element">{{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Favourites </th>
+      <td mat-cell *matCellDef="let element"><button mat-button color="primary" (click)="addToFavourite(element)">
+          Add to favourite</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
